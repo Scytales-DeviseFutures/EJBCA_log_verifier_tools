@@ -52,8 +52,11 @@ Example:
     ```
 
 The last two lines contain:
+
     ```shell
     Certs;min;max;avg
+    ```
+    ```shell
     A;B;C;D
     ```
 
