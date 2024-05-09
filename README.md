@@ -48,13 +48,23 @@ User;Request;Stored;Creation;Generated
 Example:
 
     2024-04-18-0000001;28;55;60;70
+
+If any of the log types are missing or it's not possible to perform a certain subtraction, the value will be replaced by "N/A".
+
+Example:
     
+    test-user-1713439294-0000021;9;N/A;18;24
+
+In case of an error or if any value from the subtraction is negative due to an extraction issue, that issuance is identified as an error, and it won't be used for statistics. Additionally, will be marked as “err” in the subtraction results.
+
+Example:
+
+    2024-04-18-1-0000003;err;err;err;err
 
 The last two lines contain:
 
     Certs;min;max;avg
     A;B;C;D
-    
 
 where:
 * A - number of certificates processed
