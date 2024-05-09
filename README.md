@@ -9,15 +9,15 @@ This is a Python utility to extract specific information from log files and gene
 
 2. Navigate to the project directory:
 
-    Windows:
-    ```shell
-    cd cert_issuance_time\final
-    ```
+Windows:
 
-    Linux:
-    ```shell
+    cd cert_issuance_time\final
+
+
+Linux:
+
     cd cert_issuance_time/final
-    ```
+
 
 # Usage
 The cert_issuance_time.py script is used to extract information from log files. It accepts the following command-line arguments:
@@ -27,9 +27,8 @@ The cert_issuance_time.py script is used to extract information from log files. 
     -sep, --separator: Delimiter used to separate fields in the log file.
 
 Example usage:  
-    ```shell
+
     python cert_issuance_time.py -in input_log.txt -out output.txt -sep ";"
-    ```
 
 This command will extract information from the input_log.txt file, using ";" as the field delimiter, and generate an output file named  output.txt.
 
@@ -47,27 +46,26 @@ User;Request;Stored;Creation;Generated
 * Finally, the fifth entry is the time difference (in milliseconds) between STATUS_GENERATED and CA_USERAUTH (relative to the user ID), which represents the type of certificate issuance.
 
 Example:
-    ```shell
+
     2024-04-18-0000001;28;55;60;70
-    ```
+    
 
 The last two lines contain:
 
-    ```shell
     Certs;min;max;avg
-    
     A;B;C;D
-    ```
+    
 
 where:
-A - number of certificates processed
-B - minimum issuance time (in milliseconds) of the processed certificates
-C - maximum issuance time (in milliseconds) of the processed certificates
-D - average issuance time (in milliseconds) of the processed certificates
+* A - number of certificates processed
+* B - minimum issuance time (in milliseconds) of the processed certificates
+* C - maximum issuance time (in milliseconds) of the processed certificates
+* D - average issuance time (in milliseconds) of the processed certificates
 
 #   Notes
 
-Inside the "cert_issuance_time" folder, there are two folders: "final" and "old_versions." As the name suggests, within the "final" folder, we have the latest version of the extractor, and within the "old_versions" folder, there are older versions that were developed before reaching the "final" version.
+Inside the "cert_issuance_time" folder, there are two folders: "final" and "old_versions." 
+As the name suggests, within the "final" folder, we have the latest version of the extractor, and within the "old_versions" folder, there are older versions that were developed before reaching the "final" version.
 
 
 
