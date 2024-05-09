@@ -28,10 +28,40 @@ The cert_issuance_time.py script is used to extract information from log files. 
 
 Example usage:  
     ```shell
-    python cert_issuance_time.py -in server.log.2024-04-18 -out outfile.txt -sep ";"
+    python cert_issuance_time.py -in input_log.txt -out output.txt -sep ";"
     ```
 
 This command will extract information from the input_log.txt file, using ";" as the field delimiter, and generate an output file named  output.txt.
+
+# Results
+(";" was used as the parameter for -sep.)
+
+The output file is divided into two parts. The first part contains all issuances performed by all users, where they are divided by:
+
+User;Request;Stored;Creation;Generated
+
+* The first entry is the user ID.
+* The second entry is the time difference (in milliseconds) between CERT_REQUEST and CA_USERAUTH (relative to the user ID).
+* The third entry is the time difference (in milliseconds) between CERT_STORED and CA_USERAUTH (relative to the user ID).
+* The fourth entry is the time difference (in milliseconds) between CERT_CREATION and CA_USERAUTH (relative to the user ID).
+* Finally, the fifth entry is the time difference (in milliseconds) between STATUS_GENERATED and CA_USERAUTH (relative to the user ID), which represents the type of certificate issuance.
+
+Example:
+    ```shell
+    2024-04-18-0000001;28;55;60;70
+    ```
+
+The last two lines contain:
+    ```shell
+    Certs;min;max;avg
+    A;B;C;D
+    ```
+
+where:
+A - number of certificates processed
+B - minimum issuance time (in milliseconds) of the processed certificates
+C - maximum issuance time (in milliseconds) of the processed certificates
+D - average issuance time (in milliseconds) of the processed certificates
 
 #   Notes
 
