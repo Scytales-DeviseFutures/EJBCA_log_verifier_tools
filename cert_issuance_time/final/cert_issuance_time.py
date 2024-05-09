@@ -145,7 +145,7 @@ def main():
 
     parser.add_argument('-in', dest='input_file', help='Input log file', required=True)
     parser.add_argument('-out', dest='output_file', help='Output file', required=True)
-    parser.add_argument('-sep', dest='sep', help='sep file', required=True)
+    parser.add_argument('-sep', dest='sep', help='Delimiter used to separate fields in the log file', required=True)
 
     args = parser.parse_args()
 
